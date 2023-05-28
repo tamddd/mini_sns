@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" enctype='multipart/form-data'> {% csrf_token %}
+    <p>タイトル<input type='text' name='title'></p>
+    <p>コンテント<input type='text' name='title'></p>
+    <p><input type='file' name='snsimage'></p>
+    <input type='hidden' name='author' value='{{ user.username }}'>
+<input type='submit' value='create'>
+{% endblock content %}
